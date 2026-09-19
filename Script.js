@@ -1,38 +1,4 @@
-const canvas = document.getElementById("gameCanvas");
-const ctx = canvas.getContext("2d");
-
-canvas.width = 520;
-canvas.height = 400;
-
-
-// ===============================
-// GAME VARIABLES
-// ===============================
-
-let ballRadius = 8;
-
-let x;
-let y;
-
-let dx;
-let dy;
-
-let paddleWidth = 90;
-let paddleHeight = 12;
-
-let paddleX;
-
-let score = 0;
-let lives = 3;
-
-let rightPressed = false;
-let leftPressed = false;
-
-let paused = false;
-let gameRunning = true;
-
-
-// ===============================
+==
 // BRICK SETTINGS
 // ===============================
 
