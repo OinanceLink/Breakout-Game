@@ -1,322 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <!-- Tells the browser which character system to use -->
     <meta charset="UTF-8">
-
-    <!-- Makes the website work properly on phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Name shown on the browser tab -->
-    <title>ATLAS</title>
+    <title>Breakout Game</title>
 
-    <!-- Connect HTML to CSS -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 </head>
-
 
 <body>
 
+    <div class="game-container">
 
-<!-- =========================
-     TOP HEADER
-========================= -->
+        <h1>BREAKOUT</h1>
 
-<header>
-
-    <div id="top-head">
-
-        <div>
-            <a href="#">Contact Us</a>
-            <a href="#">Privacy</a>
-            <a href="#">Conditions</a>
+        <div class="game-info">
+            <span>Score: <strong id="score">0</strong></span>
+            <span>Lives: <strong id="lives">3</strong></span>
         </div>
 
+        <canvas id="gameCanvas"></canvas>
 
-        <div>
-
-            <span>
-                <i class="fa-brands fa-twitch"></i>
-                60K
-            </span>
-
-            <span>
-                <i class="fa-brands fa-x-twitter"></i>
-                40K
-            </span>
-
-            <span>
-                October 12, 2023
-            </span>
-
+        <div class="controls">
+            <button id="leftBtn">◀</button>
+            <button id="pauseBtn">⏸</button>
+            <button id="rightBtn">▶</button>
         </div>
+
+        <button id="restartBtn">Restart Game</button>
+
+        <p class="instructions">
+            Use the ← → arrow keys to move the paddle.
+        </p>
 
     </div>
 
-
-    <!-- =========================
-         LOGO
-    ========================= -->
-
-    <div id="logo">
-
-        <h1>ATLAS</h1>
-
-    </div>
-
-
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
-
-    <div id="nav-bar">
-
-        <!-- Menu icon -->
-        <div id="menu-icon"
-             class="fa-solid fa-bars">
-        </div>
-
-
-        <!-- Menu links -->
-        <nav id="main-menu">
-
-            <a href="#">DEMOS</a>
-
-            <a href="#">FASHION</a>
-
-            <a href="#">TRAVEL</a>
-
-            <a href="#">TECH</a>
-
-            <a href="#">SPORTS</a>
-
-            <a href="#">SHORTS</a>
-
-            <a href="#">SHOP</a>
-
-        </nav>
-
-
-        <!-- Search icon -->
-        <div id="search-icon"
-             class="fa-solid fa-magnifying-glass">
-        </div>
-
-    </div>
-
-</header>
-
-
-
-<!-- =========================
-     MAIN CONTENT
-========================= -->
-
-<main id="content">
-
-
-    <!-- First row -->
-    <section class="row">
-
-
-        <!-- First article -->
-        <article id="block1" class="block">
-
-            <div class="sub-block">
-
-                <div class="feature-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80"
-                        alt="Modern interior">
-
-                </div>
-
-
-                <div id="reading1">
-
-                    <a href="#">
-                        <h2>Modern spaces and creative ideas</h2>
-                    </a>
-
-                    <p>
-                        Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-
-        <!-- Second article -->
-        <article id="block2" class="block">
-
-            <div class="sub-block">
-
-                <div class="feature-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
-                        alt="Forest">
-
-                </div>
-
-
-                <div id="reading2">
-
-                    <a href="#">
-                        <h2>Explore the world</h2>
-                    </a>
-
-                    <p>
-                        Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </section>
-
-
-
-    <!-- =========================
-         EXTRA CARDS
-    ========================= -->
-
-    <section class="cards">
-
-
-        <!-- Card 1 -->
-        <article class="card">
-
-            <div class="card-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"
-                    alt="Fashion">
-
-            </div>
-
-            <a href="#">
-                <h3>Fashion</h3>
-            </a>
-
-            <p>
-                Discover the latest style and trends.
-            </p>
-
-        </article>
-
-
-
-        <!-- Card 2 -->
-        <article class="card">
-
-            <div class="card-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=700&q=80"
-                    alt="Travel">
-
-            </div>
-
-            <a href="#">
-                <h3>Travel</h3>
-            </a>
-
-            <p>
-                Places, journeys and new experiences.
-            </p>
-
-        </article>
-
-
-
-        <!-- Card 3 -->
-        <article class="card">
-
-            <div class="card-image">
-
-                <img
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80"
-                    alt="Technology">
-
-            </div>
-
-            <a href="#">
-                <h3>Technology</h3>
-            </a>
-
-            <p>
-                Ideas and stories from the tech world.
-            </p>
-
-        </article>
-
-
-    </section>
-
-</main>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <p>
-        &copy; 2023 Atlas Seven |
-        Powered by WordPress
-    </p>
-
-
-    <div class="social-icons">
-
-        <a href="#" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-
-        <a href="#" class="social-icon">
-            <i class="fab fa-twitter"></i>
-        </a>
-
-        <a href="#" class="social-icon">
-            <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="#" class="social-icon">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-
-        <a href="#" class="social-icon">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-
-    </div>
-
-</footer>
-
-
-
-<!-- Connect HTML to JavaScript -->
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
