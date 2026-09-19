@@ -1,621 +1,144 @@
-/* =========================
-   BASIC SETTINGS
-========================= */
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-
-    font-family:
-        "Lucida Sans",
-        "Lucida Sans Regular",
-        "Lucida Grande",
-        "Lucida Sans Unicode",
-        Geneva,
-        Verdana,
-        sans-serif;
 }
-
-
-/* Website colors */
-
-:root {
-
-    --yellow: rgb(255, 230, 0);
-
-    --text: #111;
-
-    --background: #fff;
-
-    --brown: brown;
-}
-
-
-/* Body */
 
 body {
-
-    background: var(--background);
-
-    color: var(--text);
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease;
-}
-
-
-
-/* =========================
-   TOP HEADER
-========================= */
-
-#top-head {
-
-    background-color: rgb(255, 222, 255);
-
-    min-height: 25px;
+    min-height: 100vh;
 
     display: flex;
-
-    justify-content: space-between;
-
-    padding: 15px;
-
+    justify-content: center;
     align-items: center;
-}
 
-
-#top-head a,
-#top-head span {
-
-    text-decoration: none;
-
-    color: black;
-
-    font-weight: 550;
-
-    padding: 15px;
+    background: #080808;
 
     font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
 }
 
+.game-container {
+    width: 100%;
+    max-width: 560px;
 
+    text-align: center;
 
-/* =========================
-   LOGO
-========================= */
+    padding: 20px;
+}
 
-#logo {
+h1 {
+    font-size: 32px;
+    letter-spacing: 5px;
 
+    margin-bottom: 15px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+}
+
+#gameCanvas {
+    display: block;
+
+    width: 100%;
+    max-width: 520px;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    background: #111;
+
+    border: 2px solid #333;
+
+    border-radius: 8px;
+}
+
+.controls {
     display: flex;
 
     justify-content: center;
-
-    margin-top: 50px;
-}
-
-
-#logo h1 {
-
-    font-size: 70px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-}
-
-
-
-/* =========================
-   NAVIGATION BAR
-========================= */
-
-#nav-bar {
-
-    background-color: rgb(255, 230, 0);
-
-    min-height: 20px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 30px;
 
     gap: 20px;
 
-    padding-left: 200px;
-
-    font-size: small;
-
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
+.controls button {
+    width: 70px;
+    height: 50px;
 
-/* Navigation menu */
+    border: none;
 
-#main-menu {
+    border-radius: 10px;
 
-    display: flex;
+    background: #222;
 
-    align-items: center;
+    color: white;
 
-    justify-content: center;
+    font-size: 24px;
 
-    gap: 28px;
+    cursor: pointer;
+
+    user-select: none;
 }
 
+.controls button:active {
+    transform: scale(0.95);
 
-/* Navigation links */
-
-#nav-bar a {
-
-    text-decoration: none;
-
-    color: black;
-
-    font-weight: 550;
-
-    padding: 15px;
-
-    font-family:
-        Verdana,
-        Geneva,
-        Tahoma,
-        sans-serif;
+    background: #444;
 }
 
+#restartBtn {
+    margin-top: 20px;
 
-/* When mouse goes over a link */
+    padding: 12px 25px;
 
-#nav-bar a:hover {
+    border: none;
 
-    text-decoration: underline;
-}
+    border-radius: 8px;
 
+    background: #0095dd;
 
+    color: white;
 
-/* =========================
-   ICONS
-========================= */
-
-#menu-icon,
-#search-icon {
-
-    font-size: 25px;
+    font-size: 16px;
 
     cursor: pointer;
 }
 
-
-/* Hide menu icon on desktop */
-
-#menu-icon {
-
-    display: none;
+#restartBtn:hover {
+    opacity: 0.85;
 }
 
-
-
-/* =========================
-   MAIN CONTENT
-========================= */
-
-#content {
-
-    height: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    flex-direction: column;
-
-    padding:
-        25px
-        20px
-        60px;
-}
-
-
-
-/* First row */
-
-.row {
-
-    width: 100%;
-
-    max-width: 1100px;
-
-    min-height: 320px;
-
+.instructions {
     margin-top: 15px;
 
-    display: flex;
+    color: #999;
 
-    justify-content: space-evenly;
-
-    align-items: center;
-
-    padding: 20px;
-
-    gap: 10px;
-
-    overflow: hidden;
+    font-size: 14px;
 }
 
+@media (max-width: 600px) {
 
-
-/* Articles */
-
-.block {
-
-    min-height: 400px;
-
-    width: 50%;
-
-    display: flex;
-}
-
-
-.sub-block {
-
-    height: 100%;
-
-    width: 100%;
-
-    overflow: hidden;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-}
-
-
-
-/* =========================
-   IMAGES
-========================= */
-
-.feature-image {
-
-    width: 100%;
-
-    height: 260px;
-
-    overflow: hidden;
-}
-
-
-.feature-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    transition-duration: 0.9s;
-}
-
-
-/* Image zoom */
-
-.feature-image:hover img {
-
-    transform: scale(1.1);
-}
-
-
-
-/* =========================
-   ARTICLE TEXT
-========================= */
-
-#reading1 a,
-#reading2 a,
-.card a {
-
-    text-decoration: none;
-
-    color: brown;
-
-    font-size: x-small;
-
-    font-weight: 500;
-}
-
-
-#reading1 h2,
-#reading2 h2 {
-
-    font-size: large;
-
-    padding-top: 10px;
-}
-
-
-#reading1 p,
-#reading2 p,
-.card p {
-
-    margin-top: 10px;
-
-    line-height: 1.6;
-}
-
-
-
-/* =========================
-   CARDS
-========================= */
-
-.cards {
-
-    width: 100%;
-
-    max-width: 1100px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
-
-    padding: 20px;
-}
-
-
-.card {
-
-    overflow: hidden;
-}
-
-
-.card-image {
-
-    width: 100%;
-
-    height: 250px;
-
-    overflow: hidden;
-}
-
-
-.card-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    transition-duration: 0.9s;
-}
-
-
-.card-image:hover img {
-
-    transform: scale(1.1);
-}
-
-
-.card h3 {
-
-    font-size: large;
-
-    padding-top: 10px;
-}
-
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    min-height: 160px;
-
-    background: #111;
-
-    color: white;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 30px 8%;
-
-    gap: 20px;
-}
-
-
-.social-icons {
-
-    display: flex;
-
-    gap: 18px;
-}
-
-
-.social-icon {
-
-    color: white;
-
-    text-decoration: none;
-
-    font-size: 20px;
-}
-
-
-.social-icon:hover {
-
-    transform: scale(1.1);
-}
-
-
-
-/* =========================
-   DARK MODE
-========================= */
-
-.dark-mode {
-
-    --text: #f5f5f5;
-
-    --background: #111;
-}
-
-
-.dark-mode #top-head {
-
-    background: #222;
-}
-
-
-.dark-mode #top-head a,
-.dark-mode #top-head span {
-
-    color: white;
-}
-
-
-.dark-mode #nav-bar {
-
-    background: #e6cf00;
-}
-
-
-.dark-mode #nav-bar a {
-
-    color: #111;
-}
-
-
-
-/* =========================
-   MOBILE PHONE
-========================= */
-
-@media (max-width: 800px) {
-
-
-    #top-head {
-
-        flex-direction: column;
-
-        text-align: center;
-
-        gap: 5px;
+    .game-container {
+        padding: 12px;
     }
 
-
-    #top-head a,
-    #top-head span {
-
-        padding: 6px;
+    h1 {
+        font-size: 26px;
     }
 
-
-    #logo {
-
-        margin-top: 30px;
+    .controls button {
+        width: 80px;
+        height: 55px;
     }
-
-
-    #logo h1 {
-
-        font-size: 48px;
-    }
-
-
-    #nav-bar {
-
-        padding: 20px;
-
-        margin-top: 25px;
-    }
-
-
-    /* Show hamburger */
-
-    #menu-icon {
-
-        display: block;
-    }
-
-
-    /* Mobile menu */
-
-    #main-menu {
-
-        display: none;
-
-        position: absolute;
-
-        left: 0;
-
-        right: 0;
-
-        top: 220px;
-
-        background: var(--yellow);
-
-        flex-direction: column;
-
-        padding: 20px;
-
-        gap: 0;
-
-        z-index: 10;
-    }
-
-
-    /* JavaScript adds this class */
-
-    #main-menu.show {
-
-        display: flex;
-    }
-
-
-    /* Put articles one under another */
-
-    .row {
-
-        flex-direction: column;
-    }
-
-
-    .block {
-
-        width: 100%;
-    }
-
-
-    /* Cards become one column */
-
-    .cards {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    footer {
-
-        flex-direction: column;
-
-        text-align: center;
-    }
-
 }
